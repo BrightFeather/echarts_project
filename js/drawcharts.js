@@ -1,3 +1,4 @@
+// var style = 'infographic';
 function DrawPieChart(cinfo) {
 
     var num_male = 0;
@@ -12,7 +13,7 @@ function DrawPieChart(cinfo) {
 
     var echarts = require('echarts');
     //--- 饼状图 ---
-    var myChart = echarts.init(document.getElementById('pieChart'),'macarons');
+    var myChart = echarts.init(document.getElementById('pieChart'),'infographic');
     //图表显示提示信息
     myChart.showLoading({
         text: "图表数据正在努力加载..."
@@ -84,7 +85,14 @@ function DrawBarChartAge(cinfo) {
             data: ['年龄']
         },
         toolbox: {
-            show: false
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
         },
         calculable: true,
         xAxis: [{
@@ -152,7 +160,7 @@ function DrawMap(cinfo) {
     }
     console.log(province);
     var echarts = require('echarts');
-    var myMap = echarts.init(document.getElementById('map'),'macarons');
+    var myMap = echarts.init(document.getElementById('map'),'infographic');
     myMap.showLoading({
         text: "图表数据正在努力加载..."
     });
@@ -173,7 +181,7 @@ function DrawMap(cinfo) {
         },
         visualMap: {
             min: 0,
-            max: 200,
+            max: 100,
             left: 'left',
             top: 'bottom',
             text: ['高', '低'],           // 文本，默认为数值文本
@@ -262,7 +270,7 @@ function DrawBarChartIncome(cinfo) {
     var echarts = require('echarts');
 
     //--- 柱状图 ---
-    var myChart = echarts.init(document.getElementById('barChartIncome'),'macarons');
+    var myChart = echarts.init(document.getElementById('barChartIncome'),'infographic');
     //图表显示提示信息
     myChart.showLoading({
         text: "图表数据正在努力加载..."

@@ -39,24 +39,26 @@
             paths: {
                 jquery: 'jquery-3.2.0.min',
                 echarts: 'echarts/echarts',
-                macaron: 'echarts/macarons',
+                macarons: 'echarts/macarons',
+                infographic: 'echarts/infographic',
                 china: 'echarts/china',
                 draw: 'drawcharts'
                 // bar:'js/echarts/chart/bar', //按需加载图表关于bar图的部分
                 // line: 'js/echarts/chart/line' //按需加载图表关于线性图的部分
             }
         });
-
         require(
             [
                 'jquery',
                 'echarts',
                 'china',
-                'draw'
+                'draw',
+                'infographic',
+                'macarons'
             ],
             function DrawCharts() {
                 var cinfo = [];
-                $.getJSON("json/customerinfo.json",function(data){
+                $.getJSON("json/customerinfo1000.json",function(data){
                         $.each(data, function(key,val){
                             cinfo.push(val);
                          }) ;
