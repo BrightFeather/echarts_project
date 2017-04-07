@@ -8,67 +8,67 @@
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-md-6">
-            <div id="pieChart" style="height: 400px; width: 500px; float: left;">
-                <!-- style="height: 400px; width: 500px; float: left; border: 1px solid #ccc;
-                padding: 10px;" -->
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div id="barChartAge" style="height: 400px; width: 500px; float: left;">
-                <!-- style="height: 400px; width: 500px; float: left; border: 1px solid #ccc;
-                padding: 10px;" -->
-            </div>
+<div class="row">
+    <div class="col-md-6">
+        <div id="pieChart" style="height: 400px; width: 500px; float: left;">
+            <!-- style="height: 400px; width: 500px; float: left; border: 1px solid #ccc;
+            padding: 10px;" -->
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div id="map" style="height: 400px; width: 500px; float: left;">   
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div id="barChartIncome" style="height: 400px; width: 500px; float: left;">
-            </div>
+    <div class="col-md-6">
+        <div id="barChartAge" style="height: 400px; width: 500px; float: left;">
+            <!-- style="height: 400px; width: 500px; float: left; border: 1px solid #ccc;
+            padding: 10px;" -->
         </div>
     </div>
-    <script type="text/javascript" language="javascript">
-        require.config({
-            paths: {
-                jquery: 'jquery-3.2.0.min',
-                echarts: 'echarts/echarts',
-                macaron: 'echarts/macarons',
-                china: 'echarts/china',
-                map: 'echarts/map',
-                // draw: 'drawcharts'
-                // bar:'js/echarts/chart/bar', //按需加载图表关于bar图的部分
-                // line: 'js/echarts/chart/line' //按需加载图表关于线性图的部分
-            }
-        });
-        require(
-            [
-                // 'jquery',
-                'echarts',
-                'china',
-                // 'map',
-                // 'draw'
-                // '/echarts/echarts',
-                // 'js/echarts/chart/bar', //按需加载图表关于bar图的部分
-                // 'js/echarts/chart/line' //按需加载图表关于线性图的部分
-            ],
-            DrawCharts
-        );
-        // var info = 
-        function DrawCharts(ec, info) {
-            DrawPieChart(ec,info);
-            DrawBarChartAge(ec,info);
-            DrawMap(ec,info);
-            DrawBarChartIncome(ec,info);
-            // DrawMap(ec,info);
-            // DrawmyColumnChart(ec,info);
-            // DrawmyLineChart(ec,info);
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div id="map" style="height: 400px; width: 500px; float: left;">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div id="barChartIncome" style="height: 400px; width: 500px; float: left;">
+        </div>
+    </div>
+</div>
+<script type="text/javascript" language="javascript">
+    require.config({
+        paths: {
+            jquery: 'jquery-3.2.0.min',
+            echarts: 'echarts/echarts',
+            macaron: 'echarts/macarons',
+            china: 'echarts/china',
+            map: 'echarts/map',
+            // draw: 'drawcharts'
+            // bar:'js/echarts/chart/bar', //按需加载图表关于bar图的部分
+            // line: 'js/echarts/chart/line' //按需加载图表关于线性图的部分
+        }
+    });
+    require(
+        [
+            // 'jquery',
+            'echarts',
+            'china',
+            // 'map',
+            // 'draw'
+            // '/echarts/echarts',
+            // 'js/echarts/chart/bar', //按需加载图表关于bar图的部分
+            // 'js/echarts/chart/line' //按需加载图表关于线性图的部分
+        ],
+        DrawCharts
+    );
+    // var info =
+    function DrawCharts(ec, info) {
+        DrawPieChart(ec,info);
+        DrawBarChartAge(ec,info);
+        DrawMap(ec,info);
+        DrawBarChartIncome(ec,info);
+        // DrawMap(ec,info);
+        // DrawmyColumnChart(ec,info);
+        // DrawmyLineChart(ec,info);
 
-        };
+    };
 
     function DrawPieChart(ec,info){
         // alert("hi");
@@ -79,7 +79,7 @@
             text: "图表数据正在努力加载..."
         });
         myChart.hideLoading();
-        myChart.setOption({  
+        myChart.setOption({
             title : {
                 text: '某站点用户访问来源',
                 subtext: '纯属虚构',
@@ -95,25 +95,25 @@
                 data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
             },
             series : [{
-                    name: '访问来源',
-                    type: 'pie',
-                    radius : '55%',
-                    center: ['50%', '60%'],
-                    data:[
-                        {value:335, name:'直接访问'},
-                        {value:310, name:'邮件营销'},
-                        {value:234, name:'联盟广告'},
-                        {value:135, name:'视频广告'},
-                        {value:1548, name:'搜索引擎'}
-                    ],
-                    itemStyle: {
-                        emphasis: {
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                        }
+                name: '访问来源',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:[
+                    {value:335, name:'直接访问'},
+                    {value:310, name:'邮件营销'},
+                    {value:234, name:'联盟广告'},
+                    {value:135, name:'视频广告'},
+                    {value:1548, name:'搜索引擎'}
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
                     }
-                }]
+                }
+            }]
         });
     }
 
@@ -169,7 +169,7 @@
             text: "图表数据正在努力加载..."
         });
         myMap.hideLoading();
-        myMap.setOption({  
+        myMap.setOption({
             title: {
                 text: 'iphone销量',
                 subtext: '纯属虚构',
@@ -252,7 +252,7 @@
                         {name: '香港',value: randomData() },
                         {name: '澳门',value: randomData() }
                     ]
-                }, 
+                },
             ]
         });
     }
@@ -398,14 +398,14 @@
     //         }]
     //     });
 
-        // var ecConfig = require('echarts/config');
-        //ECharts图表的click事件监听
-        // myLineChart.on("click", function() {
-        //     alert("你点击我了!");
-        // });
+    // var ecConfig = require('echarts/config');
+    //ECharts图表的click事件监听
+    // myLineChart.on("click", function() {
+    //     alert("你点击我了!");
+    // });
     // }
 
-    </script>
+</script>
 </body>
 
 </html>

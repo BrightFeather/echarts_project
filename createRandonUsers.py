@@ -9,7 +9,7 @@ def normal_distribution_with_range(func,start,stop,mu):
 	else: 
 		return a 
 
-n = 10
+n = 1000
 gender = ['男','女']
 age_group = ['19岁以下','20-29岁','30-39岁','40-49岁','50-59岁','60岁以上']
 marrital_status = ['已婚','未婚']

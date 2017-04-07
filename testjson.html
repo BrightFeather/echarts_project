@@ -4,17 +4,21 @@
     <meta charset="utf-8">
     <title>ECharts</title>
     <!-- 引入 echarts.js -->
-    <script src="js/echarts.js"></script>
-    <script src="js/macarons.js"></script>
+    <script src="js/echarts/echarts.js"></script>
+    <script src="js/echarts/macarons.js"></script>
     <script src="js/jquery-3.2.0.min.js"></script>
 </head>
 <body>
     <script type="text/javascript">
     $.getJSON("json/userinfo.json",function(data){ 
-    	var items = []
+    	var items = new Array()
     	$.each(data, function(key,val){
-    		console.log(val);
+            if (val["sex"] == "男"){
+                items.push(val);
+            }
+    		
 		}) ;
+        console.log(items);
     });
     </script>
 </body>
